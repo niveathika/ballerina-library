@@ -57,7 +57,7 @@ jobs:
       - name: Checkout target repository
         uses: actions/checkout@v3
         with:
-          repository: ballerina-platform/${{ github.event.inputs.target_repo }}
+          repository: niveathika/${{ github.event.inputs.target_repo }}
           path: target-repo
           token: ${{ secrets.BALLERINA_BOT_TOKEN }}
 
@@ -85,7 +85,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
         run: |
           gh pr create \
-            --repo ballerina-platform/${{ github.event.inputs.target_repo }} \
+            --repo niveathika/${{ github.event.inputs.target_repo }} \
             --base ${{ github.event.inputs.target_branch }} \
             --head apply-templates-${{ github.run_number }} \
             --title "Add ${{ github.event.inputs.template_type }}" \
